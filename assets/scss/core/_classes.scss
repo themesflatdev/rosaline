@@ -474,6 +474,14 @@
     margin-bottom: 33px;
 }
 
+.spacing-bottom-4 {
+    margin-bottom: 40px;
+
+    @include res(xl) {
+        margin-bottom: 30px;
+    }
+}
+
 /* Orther */
 .text-primary {
     color: var(--primary) !important;
@@ -651,6 +659,20 @@
 
     &.font-instrument_serif {
         text-decoration-thickness: 1px;
+    }
+}
+
+.link-inner-underline {
+    .inner-underline {
+        @include transition3;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+    }
+
+    &:hover {
+        .inner-underline {
+            text-decoration-color: var(--black);
+        }
     }
 }
 
@@ -1161,8 +1183,16 @@
         margin-top: 44px !important;
     }
 
+    .mb-xl-16 {
+        margin-bottom: 16px !important;
+    }
+
     .mb-xl-32 {
         margin-bottom: 32px !important;
+    }
+
+    .mb-xl-40 {
+        margin-bottom: 40px !important;
     }
 
     .mx-xl-20 {

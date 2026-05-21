@@ -427,8 +427,9 @@ a {
 }
 
 .br-dot {
-    width: 12px;
-    height: 12px;
+    --size: 12px;
+    width: var(--size);
+    height: var(--size);
     border-radius: 50%;
     background: #CFC75D;
 
@@ -450,6 +451,10 @@ a {
     &.stroke-white {
         background: transparent;
         border: 1px solid var(--white);
+    }
+
+    &.size8x {
+        --size: 8px;
     }
 }
 

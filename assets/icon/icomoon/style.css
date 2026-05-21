@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?tnaqtn');
-  src:  url('fonts/icomoon.eot?tnaqtn#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?tnaqtn') format('truetype'),
-    url('fonts/icomoon.woff?tnaqtn') format('woff'),
-    url('fonts/icomoon.svg?tnaqtn#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?dspvph');
+  src:  url('fonts/icomoon.eot?dspvph#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dspvph') format('truetype'),
+    url('fonts/icomoon.woff?dspvph') format('woff'),
+    url('fonts/icomoon.svg?dspvph#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-CheckLight:before {
+  content: "\e98c";
+}
+.icon-Pen:before {
+  content: "\e98d";
+}
+.icon-Rocket:before {
+  content: "\e98e";
+}
+.icon-HearthFill2:before {
+  content: "\e98f";
+}
+.icon-ArrowRight2:before {
+  content: "\e990";
+}
+.icon-Spark:before {
+  content: "\e991";
+}
+.icon-Stock:before {
+  content: "\e992";
+}
+.icon-Grid2:before {
+  content: "\e993";
+}
 .icon-Harmonize:before {
   content: "\e989";
 }

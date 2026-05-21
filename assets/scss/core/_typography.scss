@@ -13,6 +13,7 @@ h6 {
     text-rendering: optimizeLegibility;
     font-weight: 400;
     margin-bottom: 0;
+
     &.font-instrument_serif {
         font-weight: 300;
         letter-spacing: 0%;
@@ -28,6 +29,7 @@ h6 {
     text-rendering: optimizeLegibility;
     font-weight: 400;
     margin-bottom: 0;
+
     &.font-instrument_serif {
         font-weight: 300;
         letter-spacing: 0%;
@@ -128,6 +130,10 @@ h6,
     letter-spacing: 0;
 }
 
+.font-fuzzy_bubble {
+    font-family: $font-fuzzy_bubble;
+}
+
 .text-display-xl {
     font-size: clamp(56px, 8vw, 120px);
     line-height: clamp(56px, 8vw, 120px);
@@ -182,6 +188,11 @@ h6,
 .text-128 {
     font-size: clamp(64px, 8vw, 128px);
     line-height: clamp(64px, 8vw, 128px);
+}
+
+.text-144-102 {
+    font-size: clamp(56px, 10vw, 144px);
+    line-height: clamp(42px, 7vw, 102px);
 }
 
 /* Font size */
@@ -320,7 +331,7 @@ h6,
 }
 
 .letter-space--1 {
-    letter-spacing: -0.01em !important;
+    letter-spacing: -1% !important;
 }
 
 .letter-space--2 {
@@ -332,7 +343,11 @@ h6,
 }
 
 .letter-space--4 {
-    letter-spacing: -0.04em !important;
+    letter-spacing: -4% !important;
+}
+
+.letter-space--5 {
+    letter-spacing: -5% !important;
 }
 
 .letter-space--6 {

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -94,6 +94,7 @@
   --warning_800: #93370D;
   --orange_100: #FFEAD5;
   --orange_500: #FB6514;
+  --orange_500_8: #FB651414;
   --orange_600: #EC4A0A;
   --orange_700: #C4320A;
   --rose_100: #FFE4E8;
@@ -122,7 +123,7 @@
 
 /*------------ Core CSS ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -563,8 +564,9 @@ a:focus, a:hover {
 }
 
 .br-dot {
-  width: 12px;
-  height: 12px;
+  --size: 12px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   background: #CFC75D;
 }
@@ -583,6 +585,9 @@ a:focus, a:hover {
 .br-dot.stroke-white {
   background: transparent;
   border: 1px solid var(--white);
+}
+.br-dot.size8x {
+  --size: 8px;
 }
 
 .text-has_dot {
@@ -670,7 +675,7 @@ a:focus, a:hover {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -822,6 +827,10 @@ h6,
   letter-spacing: 0;
 }
 
+.font-fuzzy_bubble {
+  font-family: "Fuzzy Bubbles", sans-serif;
+}
+
 .text-display-xl {
   font-size: clamp(56px, 8vw, 120px);
   line-height: clamp(56px, 8vw, 120px);
@@ -875,6 +884,11 @@ h6,
 .text-128 {
   font-size: clamp(64px, 8vw, 128px);
   line-height: clamp(64px, 8vw, 128px);
+}
+
+.text-144-102 {
+  font-size: clamp(56px, 10vw, 144px);
+  line-height: clamp(42px, 7vw, 102px);
 }
 
 /* Font size */
@@ -1013,7 +1027,7 @@ h6,
 }
 
 .letter-space--1 {
-  letter-spacing: -0.01em !important;
+  letter-spacing: -1% !important;
 }
 
 .letter-space--2 {
@@ -1025,7 +1039,11 @@ h6,
 }
 
 .letter-space--4 {
-  letter-spacing: -0.04em !important;
+  letter-spacing: -4% !important;
+}
+
+.letter-space--5 {
+  letter-spacing: -5% !important;
 }
 
 .letter-space--6 {
@@ -1076,7 +1094,7 @@ h6,
   }
 }
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -1592,6 +1610,15 @@ h6,
   margin-bottom: 33px;
 }
 
+.spacing-bottom-4 {
+  margin-bottom: 40px;
+}
+@media (max-width: 1199px) {
+  .spacing-bottom-4 {
+    margin-bottom: 30px;
+  }
+}
+
 /* Orther */
 .text-primary {
   color: var(--primary) !important;
@@ -1793,6 +1820,19 @@ h6,
 }
 .link-underline.font-instrument_serif {
   text-decoration-thickness: 1px;
+}
+
+.link-inner-underline .inner-underline {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+.link-inner-underline:hover .inner-underline {
+  text-decoration-color: var(--black);
 }
 
 .link-underline-primary {
@@ -2282,8 +2322,14 @@ h6,
   .mt-xl-44 {
     margin-top: 44px !important;
   }
+  .mb-xl-16 {
+    margin-bottom: 16px !important;
+  }
   .mb-xl-32 {
     margin-bottom: 32px !important;
+  }
+  .mb-xl-40 {
+    margin-bottom: 40px !important;
   }
   .mx-xl-20 {
     margin-left: 20px;
@@ -2376,7 +2422,7 @@ h6,
 /*------------ Component ---------------- */
 /*------------ Layout ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -2637,6 +2683,24 @@ h6,
   padding-left: 8px !important;
   padding-right: 8px !important;
 }
+.row.r2 {
+  margin-left: -6px !important;
+  margin-right: -6px !important;
+}
+.row.r2 > * {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+@media (min-width: 992px) {
+  .row.r2 {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+  .row.r2 > * {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
 
 .container {
   margin-left: auto;
@@ -2701,8 +2765,8 @@ h6,
 .container-full-2 {
   width: 100%;
   max-width: 100%;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 80px;
+  padding-right: 80px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2714,50 +2778,6 @@ h6,
 }
 @media (max-width: 1439px) {
   .container-full-2 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-.container-full-3 {
-  width: 100%;
-  max-width: 100%;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (max-width: 1599px) {
-  .container-full-3 {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media (max-width: 1439px) {
-  .container-full-3 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-.container-full-4 {
-  width: 100%;
-  max-width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (max-width: 1599px) {
-  .container-full-4 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@media (max-width: 1439px) {
-  .container-full-4 {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2856,7 +2876,7 @@ h6,
 
 /*------------ Header ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -2874,11 +2894,6 @@ h6,
 @media (max-width: 1199px) {
   .logo-site {
     max-width: 115px;
-  }
-}
-@media (max-width: 767px) {
-  .logo-site {
-    max-width: 82px;
   }
 }
 
@@ -3503,6 +3518,11 @@ header.header-v5:not(.header-sticky) {
   background: var(--orange_100);
   color: var(--orange_700);
 }
+.demo-label.style-2 {
+  padding: 3px 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
 
 /* -- Nav Mobile -- */
 .btn-open-menu {
@@ -3819,7 +3839,7 @@ header.header-v5:not(.header-sticky) {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -3855,7 +3875,7 @@ header.header-v5:not(.header-sticky) {
 
 /*------------ Blog ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -4391,7 +4411,7 @@ header.header-v5:not(.header-sticky) {
 
 /*------------ Element ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -4624,8 +4644,16 @@ header.header-v5:not(.header-sticky) {
     transform: scaleX(1);
   }
 }
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -4984,7 +5012,7 @@ header.header-v5:not(.header-sticky) {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -5292,7 +5320,7 @@ header.header-v5:not(.header-sticky) {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -7395,7 +7423,7 @@ header.header-v5:not(.header-sticky) {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -7794,7 +7822,7 @@ header.header-v5:not(.header-sticky) {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -8776,7 +8804,7 @@ select.select-3:focus {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -9346,7 +9374,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -10250,7 +10278,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -10667,7 +10695,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -11458,7 +11486,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -11601,7 +11629,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -12151,7 +12179,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -12714,7 +12742,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -13176,7 +13204,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -14843,7 +14871,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -14896,9 +14924,17 @@ button.animate-btn::after,
   margin-bottom: 64px;
 }
 .tf-page-heading.style-3 {
-  margin: 24px 24px 0px;
+  margin: 24px 24px 0px 24px;
   border-radius: 8px;
   overflow: hidden;
+}
+.tf-page-heading.style-3 .content {
+  padding-left: 15px;
+}
+@media (min-width: 1200px) {
+  .tf-page-heading.style-3 .content {
+    padding-left: 40px;
+  }
 }
 .tf-page-heading.style-single {
   background: transparent;
@@ -18018,7 +18054,7 @@ button.animate-btn::after,
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -18087,7 +18123,7 @@ button.animate-btn::after,
 
 /*------------ Shop ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -18847,7 +18883,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -21967,7 +22003,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -22762,7 +22798,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 /*------------ Footer ---------------- */
 /* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
+    * Name: Rosaline - Multipurpose eCommerce HTML Template
     * Version: 1.0.0
     * Author: Themesflat
     * Author URI: http://themesflat.com 
@@ -23097,8 +23133,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     gap: 16px;
   }
   .footer-v2 .logo-site img {
-    width: 206px;
-    height: 64px;
     overflow: visible;
     object-fit: cover;
   }
@@ -23487,20 +23521,5 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-right: 32px;
   }
 }
-
-/*------------ Landing ---------------- */
-/* ---------------------------------------------------------
-    * Name: Glowly - Multipurpose eCommerce HTML Template
-    * Version: 1.0.0
-    * Author: Themesflat
-    * Author URI: http://themesflat.com 
-
-	* Abstracts variable
-
-    * Core CSS
-
-    * Components
- ------------------------------------------------------------------------------ */
-/*--------- Abstracts variable ---------- */
 
 /*# sourceMappingURL=styles.css.map */
