@@ -3690,7 +3690,7 @@ header.header-v5:not(.header-sticky) {
   overflow: hidden;
 }
 .demo-item .demo-img img {
-  aspect-ratio: 0.9097472924;
+  /* aspect-ratio: 0.9097472924; */
   width: 100%;
   height: 100%;
   object-fit: cover;
